@@ -1,0 +1,14 @@
+{
+    "name": "books",
+    "version": "1.0.0",
+    "description": "",
+    "main": "main.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "tsc --p ./tsconfig-build.json",
+        "dev": "ts-node-dev --respawn --transpileOnly -P ./tsconfig-build.json ./main.ts",
+        "debug": "ts-node-dev --inspect --respawn --transpileOnly -P ./tsconfig-build.json ./main.ts"
+    },
+    "author": "",
+    "license": "ISC"
+}

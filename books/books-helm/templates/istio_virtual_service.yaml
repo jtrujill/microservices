@@ -1,0 +1,15 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: {{ include "books-helm.fullname" . }}-route
+  labels:
+    chart: {{ template "books-helm.chart" . }}
+    release: {{ .Release.Name }}
+spec:
+  hosts:
+  - {{ include "books-helm.fullname" . }}.{{ .Release.Namespace }}.svc.cluster.local
+  http:
+  - route:
+    - destination:
+        host: {{ include "books-helm.fullname" . }}.{{ .Release.Namespace }}.svc.cluster.local
+        subset: {{ .Values.api.version }}

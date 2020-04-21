@@ -1,0 +1,24 @@
+{
+    "name": "users",
+    "version": "1.0.0",
+    "description": "",
+    "main": "main.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "tsc --p ./tsconfig-build.json",
+        "dev": "ts-node-dev --respawn --transpileOnly -P ./tsconfig-build.json ./main.ts",
+        "debug": "ts-node-dev --inspect --respawn --transpileOnly -P ./tsconfig-build.json ./main.ts"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.17.1",
+        "tslib": "^1.10.0"
+    },
+    "devDependencies": {
+        "@types/express": "^4.17.6",
+        "prettier": "^2.0.4",
+        "ts-node-dev": "^1.0.0-pre.44",
+        "typescript": "^3.8.3"
+    }
+}

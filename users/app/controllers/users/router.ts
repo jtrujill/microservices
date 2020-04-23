@@ -2,8 +2,12 @@ import express from 'express';
 
 const router = express.Router();
 
-router.post('/', (req, resp) => {
+router.post('', (req, resp) => {
     resp.json({id: 1});
+});
+
+router.get('', (req, resp) => {
+    resp.json([{id: 1, first_name: 'bob', last_name: 'billy'}]);
 });
 
 router.get('/:id((\\d+))', (req, resp) => {

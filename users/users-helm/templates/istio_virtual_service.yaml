@@ -7,9 +7,14 @@ metadata:
     release: {{ .Release.Name }}
 spec:
   hosts:
-  - {{ include "users-helm.fullname" . }}.{{ .Release.Namespace }}.svc.cluster.local
+  - "*"
+  gateways:
+  - microservice-gateway
   http:
-  - route:
+  - match:
+    - uri:
+        prefix: /users
+    route:
     - destination:
         host: {{ include "users-helm.fullname" . }}.{{ .Release.Namespace }}.svc.cluster.local
         subset: {{ .Values.api.version }}

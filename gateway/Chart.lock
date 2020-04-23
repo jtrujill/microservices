@@ -1,0 +1,9 @@
+dependencies:
+- name: books-helm
+  repository: https://jtrujill.github.io/helm_repo/
+  version: 0.1.0
+- name: users-helm
+  repository: https://jtrujill.github.io/helm_repo/
+  version: 0.1.0
+digest: sha256:c13a44e3da7d3bd38a21e2eedc774ac680be03a7ff53368e5fc98ef44dd78ed5
+generated: "2020-04-25T23:35:20.414245-06:00"

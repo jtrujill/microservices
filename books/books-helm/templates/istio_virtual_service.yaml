@@ -7,9 +7,14 @@ metadata:
     release: {{ .Release.Name }}
 spec:
   hosts:
-  - {{ include "books-helm.fullname" . }}.{{ .Release.Namespace }}.svc.cluster.local
+  - "*"
+  gateways:
+  - microservice-gateway
   http:
-  - route:
+  - match:
+    - uri:
+        prefix: /books
+    route:
     - destination:
         host: {{ include "books-helm.fullname" . }}.{{ .Release.Namespace }}.svc.cluster.local
         subset: {{ .Values.api.version }}
